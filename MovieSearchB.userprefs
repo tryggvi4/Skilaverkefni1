@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{CEB86D8B-68D6-4A1B-B7EA-CA2C1882EB32}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Controllers/MovieDetailViewController.cs">
+    <Files>
+      <File FileName="iOS/Controllers/MovieSearchViewController.cs" Line="34" Column="76" />
+      <File FileName="iOS/Controllers/MovieListController.cs" Line="24" Column="32" />
+      <File FileName="iOS/Controllers/MoviListDataSource.cs" Line="58" Column="1" />
+      <File FileName="iOS/MovieDownload/ImageDownloader.cs" Line="1" Column="1" />
+      <File FileName="iOS/Controllers/MovieDetailViewController.cs" Line="27" Column="43" />
+      <File FileName="../../../Fyrirlestrar/1/2017-T-488-MAPP/Lectures/HelloWorld/HelloWorld/HelloWorld.iOS/Controllers/PersonController.cs" Line="19" Column="47" NotebookId="1" />
+      <File FileName="../../../Fyrirlestrar/1/2017-T-488-MAPP/Lectures/HelloWorld/HelloWorld/HelloWorld.iOS/Controllers/PersonListController.cs" Line="8" Column="16" NotebookId="1" />
+      <File FileName="../../../Fyrirlestrar/1/2017-T-488-MAPP/Lectures/HelloWorld/HelloWorld/HelloWorld.iOS/AppDelegate.cs" Line="44" Column="18" NotebookId="1" />
+      <File FileName="iOS/Controllers/TopRatedListController.cs" Line="21" Column="75" NotebookId="1" />
+      <File FileName="iOS/Controllers/TopRatedListDataSource.cs" Line="25" Column="55" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MovieSearchB.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.37C1B3A9-BB4D-473E-965E-51E275A63E34">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.MovieSearchB.iOS>
+</Properties>
