@@ -29,7 +29,6 @@ namespace MovieSearchB.iOS.Controllers
         {
             ApiSearchResponse<MovieInfo> response = null;
 
-            //Er þetta ekki vitlaust?
             StorageClient imageStorage = new StorageClient();
             ImageDownloader downloader = new ImageDownloader(imageStorage);
 

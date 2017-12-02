@@ -38,7 +38,21 @@ namespace MovieSearchB.iOS.Controllers
             };
             this.View.AddSubview(promptLabel);
 
-            //TODO: Bæta við restinni af upplýsingunum
+            UILabel timeAndGenere = new UILabel()
+            {
+                Frame = new CoreGraphics.CGRect(margin, spaceBetween, this.View.Bounds.Width - (margin * 2), 50),
+                Text = _res.Overview.Length.ToString() + " | " + _res.Genres
+            };
+            this.View.AddSubview(timeAndGenere);
+
+            var b = _downloader.LocalPathForFilename(_res.PosterPath);
+            UIImageView poster = new UIImageView()
+            {
+                Frame = new CoreGraphics.CGRect(margin, spaceBetween, this.View.Bounds.Width - (margin * 2), 50),
+                Image = UIImage.FromFile(b)
+            };
+
+            this.View.AddSubview(poster);
 
         }
     }
