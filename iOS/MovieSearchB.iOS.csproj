@@ -134,7 +134,6 @@
     <Compile Include="Controllers\MovieSearchViewController.cs" />
     <Compile Include="Controllers\MoviListDataSource.cs" />
     <Compile Include="Controllers\TopRatedListController.cs" />
-    <Compile Include="Controllers\TopRatedListDataSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\marilyn_monroe.png" />

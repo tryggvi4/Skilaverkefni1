@@ -11,15 +11,16 @@ using MovieDownload;
 
 namespace MovieSearchB.iOS.Controllers
 {
-    public class TopRatedListDataSource : UITableViewSource
+    public class MaHenda : UITableViewSource
     {
         private readonly ApiSearchResponse<MovieInfo> _response;
         private ImageDownloader _downloader;
 
+
         public readonly NSString TopRatedCellId = new NSString("TopRatedCell");
         private readonly Action<int> _onSelectedPerson;
 
-        public TopRatedListDataSource(ApiSearchResponse<MovieInfo> response, Action<int> onSelectedPerson, ImageDownloader downloader)
+        public MaHenda(ApiSearchResponse<MovieInfo> response, Action<int> onSelectedPerson, ImageDownloader downloader)
         {
             this._response = response;
             this._onSelectedPerson = onSelectedPerson;
@@ -33,7 +34,7 @@ namespace MovieSearchB.iOS.Controllers
             {
                 cell = new MovieCell(this.TopRatedCellId, _downloader);  //UITableViewCell(UITableViewCellStyle.Default, this.MovieListCellId);
             }
-            cell.UpdateCell(this._response.Results[indexPath.Row]);  //TextLabel.Text = this._response.Results[indexPath.Row].Title;
+            //cell.UpdateCell(this._response.Results[indexPath.Row]);  //TextLabel.Text = this._response.Results[indexPath.Row].Title;
             return cell;
         }
 

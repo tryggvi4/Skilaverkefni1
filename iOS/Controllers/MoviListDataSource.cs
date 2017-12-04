@@ -14,15 +14,19 @@ namespace MovieSearchB.iOS.Controllers
     {
         private readonly ApiSearchResponse<MovieInfo> _response;
         private ImageDownloader _downloader;
+        private MovieCredit[] _credits;
 
         public readonly NSString MovieListCellId = new NSString("MovieListCell");
         private readonly Action<int> _onSelectedPerson;
+        private IApiMovieRequest _movieApi;
 
-        public MovieListDataSource(ApiSearchResponse<MovieInfo> response, Action<int> onSelectedPerson, ImageDownloader downloader)
+        public MovieListDataSource(ApiSearchResponse<MovieInfo> response, Action<int> onSelectedPerson, ImageDownloader downloader, IApiMovieRequest movieApi, MovieCredit[] credits)
         {
             this._response = response;
             this._onSelectedPerson = onSelectedPerson;
             this._downloader = downloader;
+            this._movieApi = movieApi;
+            this._credits = credits;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -32,7 +36,8 @@ namespace MovieSearchB.iOS.Controllers
             {
                 cell = new MovieCell(this.MovieListCellId, _downloader);  //UITableViewCell(UITableViewCellStyle.Default, this.MovieListCellId);
             }
-            cell.UpdateCell(this._response.Results[indexPath.Row]);  //TextLabel.Text = this._response.Results[indexPath.Row].Title;
+            cell.UpdateCell(this._response.Results[indexPath.Row], this._credits[indexPath.Row]);  //TextLabel.Text = this._response.Results[indexPath.Row].Title;
+
             return cell;
         }
 

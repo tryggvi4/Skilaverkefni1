@@ -24,9 +24,9 @@ namespace MovieSearchB.iOS.Controllers
             this.TabBarItem = new UITabBarItem(UITabBarSystemItem.Search, 0);
         }
 
-        //Fyrirlestur
         public override void ViewDidLoad()
         {
+            
             ApiSearchResponse<MovieInfo> response = null;
 
             StorageClient imageStorage = new StorageClient();
@@ -36,58 +36,45 @@ namespace MovieSearchB.iOS.Controllers
             this.View.BackgroundColor = UIColor.White;
 
             UILabel promptLabel = PromptLabel();
-            UITextField nameField = NameField();
-            UILabel greetingLabel = GreetingLabel();
-            UIButton greetingButton = GreetingButton(response, nameField, greetingLabel);
-            UIButton navigateButton = NavigationButton(nameField, response, downloader);
+            UITextField movieField = MovieField();
 
-            this.View.AddSubviews(new UIView[] { promptLabel, nameField, greetingLabel, greetingButton, navigateButton });
+            UIActivityIndicatorView activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.Gray);
+            activitySpinner.Frame = new CoreGraphics.CGRect(this.View.Bounds.Width/2, this.View.Bounds.Height/2, 24, 24);
+            activitySpinner.HidesWhenStopped = true;
+
+            UIButton navigateButton = NavigationButton(movieField, response, downloader, activitySpinner);
+
+            this.View.AddSubviews(new UIView[] { promptLabel, movieField, navigateButton, activitySpinner });
         }
 
-        private UIButton NavigationButton(UITextField nameField, ApiSearchResponse<MovieInfo> response, ImageDownloader downloader)
+        private UIButton NavigationButton(UITextField nameField, ApiSearchResponse<MovieInfo> response, ImageDownloader downloader, UIActivityIndicatorView activitySpinner)
         {
             var navigateButton = UIButton.FromType(UIButtonType.RoundedRect);
-            navigateButton.Frame = new CoreGraphics.CGRect(margin, spaceBetween * 5, this.View.Bounds.Width - (margin * 2), 50);
+            navigateButton.Frame = new CoreGraphics.CGRect(margin, spaceBetween * 3, this.View.Bounds.Width - (margin * 2), 50);
             navigateButton.SetTitle("See Movie list", UIControlState.Normal);
 
             navigateButton.TouchUpInside += async (sender, args) =>
             {
+                activitySpinner.StartAnimating();
                 nameField.ResignFirstResponder();
-                //Færa þetta yfir í portable. 
-                response = await _movieApi.SearchByTitleAsync(nameField.Text); //Nær í allar upplýsingar tengdum myndunum
-                //Portable getur unnið með gögnin en verður að sækja myndirnar inní ios projectinu
+                response = await _movieApi.SearchByTitleAsync(nameField.Text); //Nær í allar upplýsingar tengdum myndunu
+                MovieCredit[] credits = new MovieCredit[response.Results.Count];
+                for (int i = 0; i < response.Results.Count; i++){
+                    var credit = await _movieApi.GetCreditsAsync(response.Results[i].Id, "en");
+                    credits[i] = credit.Item;
+                }
+
                 var task = downloader.DownloadImagesFromResponces(response); //Download'ar öllum pósterum
+
                 await task;
 
-                this.NavigationController.PushViewController(new MovieListController(response, downloader), true);
+                activitySpinner.StopAnimating();
+                this.NavigationController.PushViewController(new MovieListController(response, downloader, _movieApi, credits), true);
             };
             return navigateButton;
         }
 
-        private UILabel GreetingLabel()
-        {
-            return new UILabel()
-            {
-                Frame = new CoreGraphics.CGRect(margin, spaceBetween * 4, this.View.Bounds.Width - (margin * 2), 50),
-                Text = ""
-            };
-        }
-
-        private UIButton GreetingButton(ApiSearchResponse<MovieInfo> response, UITextField nameField, UILabel greetingLabel)
-        {
-            var greetingButton = UIButton.FromType(UIButtonType.RoundedRect);
-            greetingButton.Frame = new CoreGraphics.CGRect(margin, spaceBetween * 3, this.View.Bounds.Width - (margin * 2), 50);
-            greetingButton.SetTitle("Leita", UIControlState.Normal);
-            greetingButton.TouchUpInside += async (sender, args) =>
-            {
-                nameField.ResignFirstResponder(); //Losa lyklaborðið til að það fari
-                response = await _movieApi.SearchByTitleAsync(nameField.Text);
-                greetingLabel.Text = response.Results[0].Title;
-            };
-            return greetingButton;
-        }
-
-        private UITextField NameField()
+        private UITextField MovieField()
         {
             return new UITextField()
             {
@@ -101,7 +88,7 @@ namespace MovieSearchB.iOS.Controllers
             return new UILabel()
             {
                 Frame = new CoreGraphics.CGRect(margin, spaceBetween, this.View.Bounds.Width - (margin * 2), 50),
-                Text = "Enter your name: "
+                Text = "Search: "
             };
         }
     }

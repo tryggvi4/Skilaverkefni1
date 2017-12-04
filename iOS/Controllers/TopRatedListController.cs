@@ -10,10 +10,11 @@ namespace MovieSearchB.iOS.Controllers
 {
     public class TopRatedListController : UITableViewController
     {
-        //ÞESSI Á AÐ BÚA TIL SINN EIGINS _DOWNLOADER
         private IApiMovieRequest _movieApi;
-        ApiSearchResponse<MovieInfo> _response;
-        ImageDownloader _downloader;
+        ImageDownloader downloader;
+        ApiSearchResponse<MovieInfo> response;
+        MovieCredit[] credits;
+
 
         public TopRatedListController(IApiMovieRequest movieApi)
         {
@@ -23,27 +24,42 @@ namespace MovieSearchB.iOS.Controllers
 
         public override async void ViewDidLoad()
         {
+            StorageClient imageStorage = new StorageClient();
+            downloader = new ImageDownloader(imageStorage);
+
+
+
             base.ViewDidLoad();
             this.Title = "Top Rated";
 
-            _response = await _movieApi.GetTopRatedAsync();
+            UIActivityIndicatorView activitySpinner = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.Gray);
+            activitySpinner.Frame = new CoreGraphics.CGRect(this.View.Bounds.Width / 2, 0, 24, 24);
+            activitySpinner.HidesWhenStopped = true;
+            this.View.AddSubview(activitySpinner);
 
-            StorageClient imageStorage = new StorageClient();
-            _downloader = new ImageDownloader(imageStorage);
+            activitySpinner.StartAnimating();
+            response = await _movieApi.GetTopRatedAsync();
+            credits = new MovieCredit[response.Results.Count];
+            for (int i = 0; i < response.Results.Count; i++)
+            {
+                var credit = await _movieApi.GetCreditsAsync(response.Results[i].Id, "en");
+                credits[i] = credit.Item;
+            }
 
 
-            this.TableView.Source = new TopRatedListDataSource(_response, _onSelectedMovie, _downloader);
+            var task = downloader.DownloadImagesFromResponces(response); //Download'ar öllum pósterum
+
+            await task;
+
+            activitySpinner.StopAnimating();
+            this.TableView.ReloadData();
+
+            this.TableView.Source = new MovieListDataSource(response, _onSelectedMovie, downloader, _movieApi, credits);
         }
 
         private void _onSelectedMovie(int row)
         {
-            this.NavigationController.PushViewController(new MovieDetailViewController(_response.Results[row], _downloader), true);
-
-            //TODO:  Sendir Alert. Á að opna details síðu fyrir myndina
-            /*var okAlertController = UIAlertController.Create("Movie selected", this._response.Results[row].Title,
-                UIAlertControllerStyle.Alert);
-            okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-            this.PresentViewController(okAlertController, true, null);*/
+            this.NavigationController.PushViewController(new MovieDetailViewController(response.Results[row], downloader, credits[row]), true);
         }
 
     }

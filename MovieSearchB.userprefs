@@ -1,16 +1,8 @@
 ﻿<Properties StartupConfiguration="{CEB86D8B-68D6-4A1B-B7EA-CA2C1882EB32}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Views/MovieCell.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
     <Files>
-      <File FileName="iOS/Controllers/MovieSearchViewController.cs" Line="31" Column="13" />
-      <File FileName="iOS/Controllers/MovieListController.cs" Line="36" Column="47" />
-      <File FileName="iOS/Controllers/MoviListDataSource.cs" Line="58" Column="1" />
-      <File FileName="iOS/Controllers/MovieDetailViewController.cs" Line="42" Column="14" />
-      <File FileName="iOS/Views/MovieCell.cs" Line="35" Column="60" />
-      <File FileName="../../../Fyrirlestrar/1/2017-T-488-MAPP/Lectures/HelloWorld/HelloWorld/HelloWorld.iOS/Controllers/PersonController.cs" Line="19" Column="47" NotebookId="1" />
-      <File FileName="../../../Fyrirlestrar/1/2017-T-488-MAPP/Lectures/HelloWorld/HelloWorld/HelloWorld.iOS/Controllers/PersonListController.cs" Line="8" Column="16" NotebookId="1" />
-      <File FileName="../../../Fyrirlestrar/1/2017-T-488-MAPP/Lectures/HelloWorld/HelloWorld/HelloWorld.iOS/AppDelegate.cs" Line="44" Column="18" NotebookId="1" />
-      <File FileName="iOS/Controllers/TopRatedListController.cs" Line="43" Column="78" NotebookId="1" />
-      <File FileName="iOS/Controllers/TopRatedListDataSource.cs" Line="40" Column="24" NotebookId="1" />
+      <File FileName="iOS/Controllers/MovieSearchViewController.cs" Line="46" Column="13" />
+      <File FileName="iOS/AppDelegate.cs" Line="1" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

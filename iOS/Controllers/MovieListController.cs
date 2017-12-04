@@ -12,30 +12,28 @@ namespace MovieSearchB.iOS.Controllers
     {
         private readonly ApiSearchResponse<MovieInfo> _response;
         ImageDownloader _downloader;
+        private IApiMovieRequest _movieApi;
+        private MovieCredit[] _credits;
 
-        public MovieListController(ApiSearchResponse<MovieInfo> response, ImageDownloader downloader)
+        public MovieListController(ApiSearchResponse<MovieInfo> response, ImageDownloader downloader, IApiMovieRequest movieApi, MovieCredit[] credits)
         {
             this._response = response;
             this._downloader = downloader;
+            this._movieApi = movieApi;
+            this._credits = credits;
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            this.Title = "Name list";
+            this.Title = "Movie list";
 
-            this.TableView.Source = new MovieListDataSource(this._response, _onSelectedMovie, _downloader);
+            this.TableView.Source = new MovieListDataSource(this._response, _onSelectedMovie, _downloader, _movieApi, _credits);
         }
 
         private void _onSelectedMovie(int row)
         {
-            this.NavigationController.PushViewController(new MovieDetailViewController(this._response.Results[row], _downloader), true);
-
-            //TODO:  Sendir Alert. Á að opna details síðu fyrir myndina
-            /*var okAlertController = UIAlertController.Create("Movie selected", this._response.Results[row].Title,
-                UIAlertControllerStyle.Alert);
-            okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-            this.PresentViewController(okAlertController, true, null);*/
+            this.NavigationController.PushViewController(new MovieDetailViewController(this._response.Results[row], _downloader, _credits[row]), true);
         }
     }
 }
