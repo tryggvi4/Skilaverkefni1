@@ -9,3 +9,15 @@
 /Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/MovieSearchB/MovieSearchB/obj/Debug/MovieSearchB.csproj.CoreCompileInputs.cache
 /Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/MovieSearchB/MovieSearchB/obj/Debug/MovieSearchB.dll
 /Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/MovieSearchB/MovieSearchB/obj/Debug/MovieSearchB.pdb
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/bin/Debug/MovieSearchB.dll
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/bin/Debug/MovieSearchB.pdb
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/bin/Debug/DM.MovieApi.dll
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/bin/Debug/Newtonsoft.Json.dll
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/bin/Debug/DM.MovieApi.pdb
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/bin/Debug/DM.MovieApi.xml
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/bin/Debug/Newtonsoft.Json.xml
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/obj/Debug/MovieSearchB.csprojResolveAssemblyReference.cache
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/obj/Debug/MovieSearchB.csproj.CoreCompileInputs.cache
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/obj/Debug/MovieSearchB.dll
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/obj/Debug/MovieSearchB.pdb
+/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/MovieSearchB/bin/Debug/DM.MovieApi.dll.mdb

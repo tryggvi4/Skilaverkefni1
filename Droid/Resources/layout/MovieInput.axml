@@ -1,3 +1,46 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-</LinearLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+        <TextView
+            android:text="Search:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/promptTextView"
+            android:textSize="18dp"
+            android:layout_marginTop="20dp" />
+        <EditText
+            android:inputType="textPersonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/movieEditText"
+            android:hint="Movie name"
+            android:layout_marginTop="20dp" />
+        <Button
+            android:text="Search!"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchButton"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp" />
+        <TextView
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/movieNameView"
+            android:layout_marginTop="20dp" />
+        <ProgressBar xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="69.5dp"
+            android:id="@+id/progressBar1"
+            android:indeterminate="true"
+            tools:visibility="invisible" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,16 +1,26 @@
-﻿<Properties StartupConfiguration="{CEB86D8B-68D6-4A1B-B7EA-CA2C1882EB32}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/AppDelegate.cs">
+﻿<Properties StartupConfiguration="{E747E53E-7529-4598-BDE9-4092EE0B8C15}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/MovieListActivity.cs">
     <Files>
-      <File FileName="iOS/Controllers/MovieSearchViewController.cs" Line="46" Column="13" />
-      <File FileName="iOS/AppDelegate.cs" Line="1" Column="22" />
+      <File FileName="Droid/MainActivity.cs" Line="38" Column="19" />
+      <File FileName="Droid/MovieInputFragment.cs" Line="81" Column="98" />
+      <File FileName="Droid/TopRatedFragment.cs" Line="34" Column="87" />
+      <File FileName="Droid/ListViewFragment.cs" Line="32" Column="13" />
+      <File FileName="Droid/MovieListActivity.cs" Line="50" Column="29" />
+      <File FileName="../../../../Fyrirlestrar/1/2017-T-488-MAPP/Lectures/HelloWorld/HelloWorld/HelloWorld.Android/SplashActivity.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="../../../../Fyrirlestrar/1/2017-T-488-MAPP/Lectures/HelloWorld/HelloWorld/HelloWorld.Android/MainActivity.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="../../../../Fyrirlestrar/1/2017-T-488-MAPP/Lectures/HelloWorld/HelloWorld/HelloWorld.Android/NameInputFragment.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Catchpoint exceptionName="System.Exception" includeSubclasses="True" />
+      <Breakpoint file="/Users/tryggvi/Dropbox/2 - Skóli/Háskóli/HR/5ta önn/Þróun smáforrita/Verkefni/Skilaverkefni 1/ios án pakka 26/Skilaverkefni1/Droid/MovieListActivity.cs" relfile="Droid/MovieListActivity.cs" line="40" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.MovieSearchB.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MonoDevelop.Ide.ItemProperties.MovieSearchB.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.37C1B3A9-BB4D-473E-965E-51E275A63E34">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.MovieSearchB.iOS>

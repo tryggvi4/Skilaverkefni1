@@ -10,9 +10,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace HelloWorld.Droid
+namespace MovieSearchB.Droid
 {
-    [Activity(Label = "HelloWorld", Theme="@style/MyTheme.Splash", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "HelloWorld", Theme="@style/MyTheme.Splash", MainLauncher = true)] //, Icon = "@drawable/icon"
     public class SplashActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -20,8 +20,6 @@ namespace HelloWorld.Droid
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            MainActivity.People = new People();
-
             this.StartActivity(typeof(MainActivity));
             this.Finish();
         }

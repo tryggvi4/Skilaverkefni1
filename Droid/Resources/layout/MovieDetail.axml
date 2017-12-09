@@ -1,3 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-</LinearLayout>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout1"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="Harrý Potter"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="236.0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:layout_below="@id/relativeLayout1" />
+    <TextView
+        android:text="2007"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_below="@id/textView1" />
+    <ImageView
+        android:src="@android:drawable/ic_menu_gallery"
+        android:layout_width="147.0dp"
+        android:layout_height="131.0dp"
+        android:id="@+id/imageView1"
+        android:layout_below="@id/textView2" />
+    <TextView
+        android:text="Something something"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="378.0dp"
+        android:layout_height="131.0dp"
+        android:id="@+id/textView3"
+        android:layout_toRightOf="@id/imageView1"
+        android:layout_below="@id/textView2" />
+</RelativeLayout>
